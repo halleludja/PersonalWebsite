@@ -1,2 +1,2 @@
 # PersonalWebsite
-I create this personal website to the fufill final project of Web Programming 1 Lesson in 3rd Semester
+I create this personal website to fufill the final project of Web Programming 1 Lesson in 3rd Semester
