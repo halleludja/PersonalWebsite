@@ -1,0 +1,176 @@
+/* Menggunakan variabel CSS untuk warna agar lebih mudah dikelola */
+:root {
+  --primary-color: #425c77;
+  --text-color: black;
+  --hover-bg-color: #007BFF;
+  --border-color: #ccc;
+}
+
+/* Reset dasar */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Navbar */
+header.navbar-container {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  height: 65px; /* Tinggi navbar */
+  padding: 0 20px; /* Padding horizontal */
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--border-color);
+  z-index: 9999;
+}
+
+header.navbar-container .logo img {
+  width: 130px;
+}
+
+header.navbar-container .nav-list ul {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+
+header.navbar-container .nav-list li {
+  list-style-type: none;
+  border-radius: 5px;
+}
+
+header.navbar-container .nav-list li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+header.navbar-container .nav-list li:hover a {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Ukuran font sesuai permintaan */
+h1 {
+  font-size: 1.7rem; /* Nama */
+}
+
+.info {
+  font-size: 1.1rem; /* Future Employee at Tokopedia */
+  color: #777;
+  line-height: 1.5rem;
+}
+
+.bio {
+  font-size: 1.2rem; /* Deskripsi */
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Ikon CTA */
+.cta-icons a {
+  font-size: 1.5rem; /* Ukuran ikon */
+  color: #333;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-icons a:hover {
+  color: var(--hover-bg-color);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header.navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 65px; /* Sesuaikan dengan tinggi navbar */
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-list ul {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-list.active {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  display: block;
+  width: calc(100% - 40px); /* Mengurangi dari kiri dan kanan */
+  height: 1.3px;
+  background-color: var(--border-color);
+  margin: 0 auto 15px; /* Posisikan di tengah dengan margin */
+}
